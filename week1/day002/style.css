@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:100,300,700");
+
+form {
+  margin: 40px 0px;
+}
+
+.formInputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0rem;
+}
+
+.band-member-inputs {
+  width: 20rem;
+}
+
+label {
+  font-family: Roboto;
+}

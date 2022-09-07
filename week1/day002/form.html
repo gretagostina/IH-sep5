@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Class</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="" method="POST">
+      <div class="formInputContainer">
+        <label class="formLabel" for="band-member">Band Member</label>
+        <input type="text" id="band-member" placeholder="Enter name" />
+      </div>
+      <div class="formInputContainer">
+        <label class="formLabel" for="amount">Band Member</label>
+        <input type="number" id="amount" min="0" max="20" placeholder="0" />
+      </div>
+      <div>
+        <label for="musicalAbility">Select Musical Ability</label>
+        <select name="Musical Ability" id="musicalAbility">
+          <option value="rap">Rap</option>
+          <option value="guitar">Guitar</option>
+          <option value="bass">Bass</option>
+          <option value="drums">Drums</option>
+          <option value="scratchdj">Scratch Dj</option>
+        </select>
+      </div>
+      <!-- Email -->
+      <div>
+        <label for="email">Enter your Email</label>
+        <input type="email" placeholder="Enter Email" />
+      </div>
+      <!-- Password -->
+      <div>
+        <label for="password">Enter password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter password here"
+        />
+      </div>
+      <!-- Text Area -->
+      <div>
+        <label for="tellMeSomething">Tell Me something</label>
+        <textarea name="tellMe" id="tellMeSomething"></textarea>
+      </div>
+
+      <!-- Radio button Example -->
+      <div>
+        <h2>Musical Taste</h2>
+
+        <div>
+          <input
+            type="radio"
+            id="rock"
+            value="Rock & Roll"
+            name="musicalTaste"
+          />
+          <label for="rock">Rock & Roll</label>
+        </div>
+        <div>
+          <input type="radio" id="rap" value="hip hop" name="musicalTaste" />
+          <label for="rap">Hip Hop</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="country"
+            value="Country"
+            name="musicalTaste"
+          />
+          <label for="country">Country</label>
+        </div>
+      </div>
+
+      <div>
+        <input type="checkbox" name="iron-merchan" value="t-shirt" /> T-shirt
+        <input type="checkbox" name="iron-merchan" value="cup" /> Cup
+        <input type="checkbox" name="iron-merchan" value="notebook" />
+        Notebook
+      </div>
+      <button>CLICK ME</button>
+    </form>
+
+    <h1>Form 2</h1>
+    <form action="" method="">
+      <div class="formInputContainer">
+        <label class="formLabel" for="band-member">Band Member</label>
+        <input type="text" id="band-member" placeholder="Enter name" />
+      </div>
+      <div class="formInputContainer">
+        <label class="formLabel" for="amount-of-members"
+          >Number of Members within the band</label
+        >
+        <input
+          type="number"
+          id="amount-of-members"
+          placeholder="Enter amount of band members"
+        />
+      </div>
+
+      <div class="formInputContainer">
+        <label for="musicalAbility">Select Musical Ability</label>
+        <select name="Musical Ability" id="musicalAbility">
+          <option value="rap">Rap</option>
+          <option value="guitar">Guitar</option>
+          <option value="bass">Bass</option>
+          <option value="drums">Drums</option>
+          <option value="scratchdj">Scratch Dj</option>
+        </select>
+      </div>
+
+      <div class="formInputContainer">
+        <label class="formLabel" for="member-emaol"
+          >Email of manager of the band</label
+        >
+        <input
+          type="email"
+          id="member-emaol"
+          placeholder="Enter email of band member"
+        />
+      </div>
+
+      <div class="formInputContainer">
+        <label class="formLabel" for="member-phone">Phone Number</label>
+        <input type="tel" id="member-phone" placeholder="Enter phone number" />
+      </div>
+
+      <div class="formInputContainer">
+        <label class="formLabel" for="password">Enter Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter a valid password"
+        />
+      </div>
+
+      <div class="formInputContainer">
+        <label class="formLabel" for="feedback">Enter Feedback</label>
+        <textarea
+          minlength="10"
+          maxlength="250"
+          name="tellMe"
+          id="feedback"
+        ></textarea>
+      </div>
+
+      <!-- Radio button Example -->
+      <div>
+        <h2>Musical Taste</h2>
+
+        <div>
+          <input type="radio" id="rock" value="rock&roll" name="musicalTaste" />
+          <label for="rock">T-shirt</label>
+        </div>
+        <div>
+          <input type="radio" id="rap" value="hip hop" name="musicalTaste" />
+          <label for="rap">Long Sleeve</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="country"
+            value="country"
+            name="musicalTaste"
+          />
+          <label for="country">Sweater</label>
+        </div>
+      </div>
+
+      <div class="formInputContainer">
+        <label class="formLabel" for="feedback"
+          >Enter a color for your clothing</label
+        >
+        <input type="color" />
+        <input type="range" />
+      </div>
+
+      <div class="formInputContainer">
+        <label for="cowbell">Cowbell</label>
+        <input
+          type="range"
+          id="cowbell"
+          name="cowbell"
+          min="0"
+          max="100"
+          value="80"
+          step="10"
+        />
+      </div>
+
+      <!-- Checkboxes Example -->
+      <!-- <div>
+        <input type="checkbox" name="iron-merchan" value="t-shirt" /> T-shirt
+        <input type="checkbox" name="iron-merchan" value="cup" /> Cup
+        <input type="checkbox" name="iron-merchan" value="notebook" /> Notebook
+      </div> -->
+
+      <input type="submit" value="Click here to submit info" />
+    </form>
+  </body>
+</html>
