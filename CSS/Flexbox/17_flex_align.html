@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flex Align</title>
     <style>
-        #container{
-            background: #555;
-            display: flex;
-            /* Have to comment flex-wrap, for the align-self to work */
-            /* flex-wrap: wrap; */
-            /* align item horizontally */
-            justify-content: space-evenly;
-            height: 680px;
-            /* The below align-items works for verical alignment when height is set */
-            align-items: baseline;
-            /* Align content vertically when space is present. */
-            align-content: flex-start;
-        }
-        /* 
+      #container {
+        background: #555;
+        display: flex;
+        /* Have to comment flex-wrap, for the align-self to work */
+        /* flex-wrap: wrap; */
+        /* align item horizontally */
+        justify-content: space-evenly;
+        height: 400px;
+        /* The below align-items works for verical alignment when height is set */
+        align-items: baseline;
+        /* Align content vertically when space is present. */
+        align-content: flex-start;
+        /* row-gap: 20px; */
+        /* column-gap: 10px; */
+        flex-wrap: wrap;
+      }
+      /* 
         align-content: 
                         flex-start
                         flex-end
@@ -27,7 +30,7 @@
                         space-around
                         stretch
          */
-        /* align-items:
+      /* align-items:
                     stretch
                     center
                     flex-start
@@ -36,7 +39,7 @@
                     initial
                     inherit;
         */
-        /*
+      /*
         justify-content: 
                         flex-start
                         flex-end
@@ -45,12 +48,14 @@
                         space-around
                         space-evenly 
          */
-         .item-1{
-             order: 3;
-         }
-         .item-2{
-            align-self: center;
-            /* 
+      .item-1 {
+        order: 1;
+        /* flex-shrink: 1; */
+        flex-basis: auto;
+      }
+      .item-2 {
+        /* align-self: center; */
+        /* 
             align-self: 
                         auto
                         flex-start
@@ -59,30 +64,31 @@
                         baseline
                         stretch
              */
-             order: 2;
-         }
+        order: 2;
+        /* flex-grow: 4; */
+      }
 
-         .item-3{
-             /* changes the display order */
-             order: 1;
-         }
+      .item-3 {
+        /* changes the display order */
+        order: 3;
+      }
 
-        .item{
-            background: #f4f4f4;
-            border: #ccc solid 1px;
-            padding: 1rem;
-            text-align: center;
-            margin: 0.75rem;
-            /* Gives width to indivual item */
-            flex-basis: 200px;
-        }
+      .item {
+        background: #f4f4f4;
+        border: #ccc solid 1px;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.75rem;
+        /* Gives width to indivual item */
+        flex-basis: 200px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="container">
-        <div class="item item-1"><h3>Item 1</h3></div>
-        <div class="item item-2"><h3>Item 2</h3></div>
-        <div class="item item-3"><h3>Item 3</h3></div>
+      <div class="item item-1"><h3>Item 1</h3></div>
+      <div class="item item-2"><h3>Item 2</h3></div>
+      <div class="item item-3"><h3>Item 3</h3></div>
     </div>
-</body>
+  </body>
 </html>
