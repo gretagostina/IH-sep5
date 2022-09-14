@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <style>
       .samane {
@@ -14,19 +15,61 @@
       .biggie {
         color: red;
       }
+
+      .divExample {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
     </style>
   </head>
   <body>
-    <div id="container">
+    <div id="container" class="ambos">
       <h1>Hip Hop Classics</h1>
       <div id="tupac"></div>
       <div id="snoopDogg"></div>
       <div class="biggie">Hello Andrew</div>
+      <div class="divTest">
+        <div></div>
+        <h2>Hola mundo</h2>
+        <h3>Hola barcelona</h3>
+        <h2 class="bogdan">Bogdan</h2>
+        <h4 class="aleix">Aleix</h4>
+        <h5>Farik</h5>
+      </div>
       <div class="biggie"></div>
       <div class="biggie"></div>
       <div class="biggie"></div>
       <div class="outkast"></div>
-      <div class="atcq"></div>
+      <div class="atcq">test</div>
+      <div class="divExample">
+        <h1>Hello</h1>
+      </div>
+      <div class="divExample"><h2>Hello</h2></div>
+      <div class="barcelona other">
+        <!-- a comment -->
+        <h1>Barcelona is the shit!</h1>
+        <p>
+          I like to avoid tourists in barcelona although secretely I am one!
+        </p>
+      </div>
+
+      <ul class="cityList">
+        <li>Barcelona</li>
+        <li>Madrid</li>
+        <li>Oviedo</li>
+        <li>Gijon</li>
+        <li>Sevilla</li>
+      </ul>
+
+      <input type="text" />
+
+      <!-- <ul>
+        <li>Patatas Bravas</li>
+        <li>Cerveza</li>
+        <li>Calçots</li>
+        <li>Ensaimada</li>
+      </ul> -->
     </div>
 
     <script src="index.js"></script>
