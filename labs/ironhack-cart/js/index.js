@@ -173,44 +173,44 @@ function removeProduct(event) {
 // }
 
 // ABDEL's Solution
-function createProduct() {
-  const newName = document.querySelector(
-    '.create-product input[type="text"]'
-  ).value;
+// function createProduct() {
+//   const newName = document.querySelector(
+//     '.create-product input[type="text"]'
+//   ).value;
 
-  const newPrice = document.querySelector(
-    '.create-product input[type="number"]'
-  ).value;
+//   const newPrice = document.querySelector(
+//     '.create-product input[type="number"]'
+//   ).value;
 
-  const parent = document.getElementsByTagName('tbody')[0];
+//   const parent = document.getElementsByTagName('tbody')[0];
 
-  const newNameProductRow = document.createElement('tr');
-  newNameProductRow.className = 'product';
+//   const newNameProductRow = document.createElement('tr');
+//   newNameProductRow.className = 'product';
 
-  const rowTemplate = `<td class="name">
-  <span>${newName}</span>
-  </td>
-  <td class="price">$<span>${newPrice}</span></td>
-  <td class="quantity">
-  <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
-  <td class="action">
-  <button class="btn btn-remove">Remove</button>
-  </td>`;
+//   const rowTemplate = `<td class="name">
+//   <span>${newName}</span>
+//   </td>
+//   <td class="price">$<span>${newPrice}</span></td>
+//   <td class="quantity">
+//   <input type="number" value="0" min="0" placeholder="Quantity" />
+//   </td>
+//   <td class="subtotal">$<span>0</span></td>
+//   <td class="action">
+//   <button class="btn btn-remove">Remove</button>
+//   </td>`;
 
-  parent.appendChild(newNameProductRow);
+//   parent.appendChild(newNameProductRow);
 
-  newNameProductRow.innerHTML = rowTemplate;
+//   newNameProductRow.innerHTML = rowTemplate;
 
-  const removeEl = document.getElementsByClassName('btn-remove');
-  for (let i = 0; i < removeEl.length; i++) {
-    removeEl[i].addEventListener('click', removeProduct);
-  }
+//   const removeEl = document.getElementsByClassName('btn-remove');
+//   for (let i = 0; i < removeEl.length; i++) {
+//     removeEl[i].addEventListener('click', removeProduct);
+//   }
 
-  document.querySelector('.create-product input[type="text"]').value = '';
-  document.querySelector('.create-product input[type="number"]').value = 0;
-}
+//   document.querySelector('.create-product input[type="text"]').value = '';
+//   document.querySelector('.create-product input[type="number"]').value = 0;
+// }
 
 // PABLO'S Solution
 function createProduct() {
