@@ -269,12 +269,14 @@
   </body>
   <script>
     //Hemo aprendido la manera convencional de usar funciones
+    console.log(calcSum(2, 4));
+
+    // function Expression - Can be invoked anywhere within the file due to having a hoisted globalScope (we can call the function before or after the function itself)
     function calcSum(x, y) {
       return x + y;
     }
-    console.log(calcSum(2, 4));
 
-    // function declaration (statement)
+    // function declaration (statement) - This type of declaritive functions cannot be invoked before they are written/called because they do not have a global hoisted scoped!
 
     const welcomeMessage = (message) => {
       return message;
@@ -283,12 +285,159 @@
     const greeting = welcomeMessage("So nice to have you here! Welcome!");
     console.log(greeting);
 
-    // function declaration (statement) - SIMPLIFIED
+    // function declaration (statement) - SIMPLIFIED - OLD SCHOOL ES5
     const welcomeMessageSimplified = function (message) {
       console.log(message);
     };
+
+    // function declaration (statement) - SIMPLIFIED - NEW SCHOOL ES6
+    const welcomeMessageSimplified2 = (message) => {
+      console.log(message);
+    };
+
+    welcomeMessageSimplified2("Wu Tang Clan is for the children -  👐");
+
     welcomeMessageSimplified(
       "C.RE.A.M - Cash Rules Everything Around Me -  👐"
+    );
+
+    // Anonymous Functions as other function arguments -  example 1
+    function printName(name, anonFunc) {
+      anonFunc(name);
+    }
+
+    printName("andreu", function (name) {
+      console.log(name[0].toUpperCase() + name.slice(1));
+    });
+
+    // Anonymous Function inside the argument of a function - example 2
+    function getLength(str, anonFunc) {
+      anonFunc(str);
+    }
+
+    getLength("samane", function (str) {
+      console.log(`${str} has ${str.length} letters `);
+    });
+
+    // Anonymous Functions as other functions - example 3 - setTimeout()
+    // SETTIMEOUT: El método setTimeout() de JavaScript es un método incorporado que permite temporizar la ejecución de una determinada función . Es necesario pasar la cantidad de tiempo a esperar en milisegundos , lo que significa que para esperar un segundo, es necesario pasar mil milisegundos .
+
+    setTimeout(function () {
+      console.log(
+        "Quincy Jones, Sir George Martin & Phil Spector are by far the sickest musicProducers of the 21st century"
+      );
+    }, 2000);
+
+    // Dado que las funciones anónimas no están disponibles para su uso posterior, si, por alguna razón, tenemos la necesidad de utilizarlas, debemos darles una declaración de función adecuada o una estructura de expresión de función. Así podremos referenciarlas y utilizarlas siempre que lo necesitemos.
+    function notifyUser() {
+      console.log("Francesc es un mega Fan de Antonia Font!");
+    }
+    setTimeout(notifyUser, 4000);
+
+    const notifyUser2 = () => {
+      console.log("Francesc es un mega Fan de Antonia Font!");
+    };
+    setTimeout(notifyUser2, 4000);
+
+    // Arrow Functions
+    // - It provides more concise syntax for writing function expressions by removing the "function" and "return" keywords.
+
+    // - Arrow functions are defined using the fat arrow(=> ) Notification - Unlike ordinary functions, arrow functions do not have their own "this" keyword.
+
+    // - The value of this inside an arrow function is always bound to the value of this in the closest on - arrow function.
+
+    // - Arrow functons are not hoisted.They must be defined before they are used.
+
+    // boilerPlate for Arrow function
+    const arrowFunctionBoiler1 = () => {};
+    let arrowFunctionBoiler2 = () => {};
+
+    const greetingOldSchool = function (name) {
+      console.log(`Yo yo yo, what's good my homie, ${name}`);
+    };
+
+    const greetingNewSchool = (name) => {
+      console.log(`Yo yo yo, what's good my homie, ${name}`);
+    };
+
+    greetingOldSchool("Diego");
+    greetingOldSchool("Ferran");
+
+    //Pero esta función se puede acortar aún más, ya que sólo devolvemos una expresión (sólo hay una línea de código en el cuerpo), por lo que podemos omitir los corchetes y omitir el retorno, ya que está implícito:
+    const greetingWithArrowShorter = (name) =>
+      console.log(`Yo yo yo, what's good my homie, ${name}`);
+
+    greetingWithArrowShorter("Jarko");
+
+    //Using the keyword THIS
+    const user = {
+      name: "Freddie Mercury",
+      age: "40",
+      getOlder: function () {
+        console.log(this);
+        console.log(this.name);
+      },
+    };
+    // console.log(user.getOlder());
+
+    //Como podemos ver, la palabra clave this se refiere al propio objeto (usuario). Así que si quisiéramos añadir un año a la edad de Freddy podríamos actualizar nuestro código de la siguiente manera:
+    const user2 = {
+      name: "Freddie Mercury",
+      age: 40,
+      getOlder: function () {
+        this.age += 1;
+        console.log(this.age);
+      },
+    };
+    console.log(user2.getOlder());
+
+    // Using a Set Interval within a function within a property within an object! CALLBACKING AT IS BEST!
+    const user3 = {
+      name: "Freddie Mercury",
+      age: 40,
+      getOlder: function () {
+        setInterval(function () {
+          this.age += 1;
+          console.log(this.age);
+        }, 1000);
+      },
+    };
+    // console.log(user3.getOlder());
+
+    // Parece que hemos "perdido" el acceso a las propiedades del objeto "usuario", ya que esta palabra clave se refiere ahora al método setInterval(). Simplificando, esto dentro de setInterval() se refiere al setInterval().
+
+    //Entonces, ¿qué podemos hacer para acceder a las propiedades que necesitamos?
+    const user4 = {
+      name: "Freddie Mercury",
+      age: 40,
+      getOlder: function () {
+        setInterval(() => {
+          this.age += 1;
+          console.log(this.age);
+        }, 1000);
+      },
+    };
+    // console.log(user4.getOlder());
+
+    // USANDO ARGUMENTOS
+    function printSomething() {
+      console.log(arguments);
+    }
+
+    printSomething("Hello world!");
+
+    //Podemos utilizar corchetes [] para acceder a los argumentos: arguments[0] devuelve el primer argumento, arguments[1] devuelve el segundo, y así sucesivamente. También podemos utilizar la propiedad length del objeto arguments para determinar el número de argumentos.
+
+    function printSomething2() {
+      console.log("Arguments Length:", arguments.length);
+      console.log("all: ", arguments);
+      console.log("First Argument", arguments[0]);
+      console.log("Second Argument", arguments[1]);
+    }
+
+    printSomething2(
+      "Hello, I love to play guitar when I have the time!",
+      "I love coding on vue"
     );
   </script>
 </html>
