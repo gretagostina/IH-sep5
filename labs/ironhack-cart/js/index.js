@@ -214,10 +214,10 @@ function removeProduct(event) {
 
 // PABLO'S Solution
 function createProduct() {
-  let productName = document.querySelectorAll(
+  let productName = document.querySelector(
     ".create-product input[type='text']"
   );
-  let productPrice = document.querySelectorAll(
+  let productPrice = document.querySelector(
     ".create-product input[type='number']"
   );
   const table = document.querySelector('tbody');
