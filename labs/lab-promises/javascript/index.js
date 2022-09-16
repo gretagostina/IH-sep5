@@ -31,9 +31,8 @@
 //   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
 // }, (error) => console.log(error));
 
-
-// Callback 
-// En palabras demasiado coloquiales, es una funcion que se llama dentro de otra funcion. Puede ser en el body, puede ser como argumento/paramtero que es exactamente lo que estaremos haciendo en esta iteracion! 
+// Callback
+// En palabras demasiado coloquiales, es una funcion que se llama dentro de otra funcion. Puede ser en el body, puede ser como argumento/paramtero que es exactamente lo que estaremos haciendo en esta iteracion!
 
 // Esta funciona, basicamente se va a anidar dentro de la misma funcion por la cantidad de pasos que necesitemos llamar en el archivo de data.js
 // **BOILERPLATES**
@@ -42,40 +41,92 @@
 // **BOILERPLATES**
 // document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
 
-
-
 // Iteration 1 - using callbacks
 // V1 - Using an extra string within data.js
-getInstruction('mashedPotatoes', 0, (step) => { 
-  document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-  getInstruction('mashedPotatoes', 1, (step) => { 
+getInstruction(
+  "mashedPotatoes",
+  0,
+  (step) => {
     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-    getInstruction('mashedPotatoes', 2, (step) => { 
-      document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-      getInstruction('mashedPotatoes', 3, (step) => { 
-        document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-        getInstruction('mashedPotatoes', 4, (step) => { 
-          document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-          getInstruction('mashedPotatoes', 5, (step) => { 
-            document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-            document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
-          }, (error) => {console.log(error) });
-        }, (error) => {console.log(error) });
-      }, (error) => {console.log(error) });
-    }, (error) => {console.log(error) });
-  }, (error) => {console.log(error) });
-}, (error) => {console.log(error) });
+    getInstruction(
+      "mashedPotatoes",
+      1,
+      (step) => {
+        document.querySelector(
+          "#mashedPotatoes"
+        ).innerHTML += `<li>${step}</li>`;
+        getInstruction(
+          "mashedPotatoes",
+          2,
+          (step) => {
+            document.querySelector(
+              "#mashedPotatoes"
+            ).innerHTML += `<li>${step}</li>`;
+            getInstruction(
+              "mashedPotatoes",
+              3,
+              (step) => {
+                document.querySelector(
+                  "#mashedPotatoes"
+                ).innerHTML += `<li>${step}</li>`;
+                getInstruction(
+                  "mashedPotatoes",
+                  4,
+                  (step) => {
+                    document.querySelector(
+                      "#mashedPotatoes"
+                    ).innerHTML += `<li>${step}</li>`;
+                    getInstruction(
+                      "mashedPotatoes",
+                      5,
+                      (step) => {
+                        document.querySelector(
+                          "#mashedPotatoes"
+                        ).innerHTML += `<li>${step}</li>`;
+                        document
+                          .querySelector("#mashedPotatoesImg")
+                          .removeAttribute("hidden");
+                      },
+                      (error) => {
+                        console.log(error);
+                      }
+                    );
+                  },
+                  (error) => {
+                    console.log(error);
+                  }
+                );
+              },
+              (error) => {
+                console.log(error);
+              }
+            );
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  },
+  (error) => {
+    console.log(error);
+  }
+);
 
 // V2 - Manipulating the DOM to create a new html attribute to add extra
-// stringgetInstruction('mashedPotatoes', 0, (step) => { 
+// stringgetInstruction('mashedPotatoes', 0, (step) => {
 //   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-//   getInstruction('mashedPotatoes', 1, (step) => { 
+//   getInstruction('mashedPotatoes', 1, (step) => {
 //     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-//     getInstruction('mashedPotatoes', 2, (step) => { 
+//     getInstruction('mashedPotatoes', 2, (step) => {
 //       document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-//       getInstruction('mashedPotatoes', 3, (step) => { 
+//       getInstruction('mashedPotatoes', 3, (step) => {
 //         document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
-//         getInstruction('mashedPotatoes', 4, (step) => { 
+//         getInstruction('mashedPotatoes', 4, (step) => {
 //           document.querySelector("#mashedPotatoes").innerHTML += `<li>${step}</li>`;
 //           document.querySelector("#mashedPotatoes").innerHTML += `<li>Mashed Potatoes are ready</li>`;
 //           document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
@@ -86,41 +137,49 @@ getInstruction('mashedPotatoes', 0, (step) => {
 // }, (error) => {console.log(error) });
 
 // Iteration 2 - using promises
-obtainInstruction('steak', 0)
-  .then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 1)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 2)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 3)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 4)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 5)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 6)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  return obtainInstruction('steak', 7)
-}).then(step => {
-  document.querySelector('#steak').innerHTML += `<li>${step}</li>`
-  document.querySelector("#steakImg").removeAttribute("hidden");
-}).catch((error) => {
-  setTimeout(() => {
-    document.querySelector('#steak').innerHTML += `<li>${error}</li>`
-}, 1000)})
+obtainInstruction("steak", 0)
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 1);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 2);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 3);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 4);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 5);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 6);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    return obtainInstruction("steak", 7);
+  })
+  .then((step) => {
+    document.querySelector("#steak").innerHTML += `<li>${step}</li>`;
+    document.querySelector("#steakImg").removeAttribute("hidden");
+  })
+  .catch((error) => {
+    setTimeout(() => {
+      document.querySelector("#steak").innerHTML += `<li>${error}</li>`;
+    }, 1000);
+  });
 
 // XAVI's Solution
 // Iteration 2 - using promises
-// Esta solucion tiene el approach correcto ya que esta dependiendo de usar promesas en vez de callbacks, pero al no concatenar promesa con promesa basicamente esta usando el principio de las promesas dentro de un callback. 
-// Podemos asumir que leer esto es bastante dificil :( 
-
+// Esta solucion tiene el approach correcto ya que esta dependiendo de usar promesas en vez de callbacks, pero al no concatenar promesa con promesa basicamente esta usando el principio de las promesas dentro de un callback.
+// Podemos asumir que leer esto es bastante dificil :(
 
 // obtainInstruction("steak", 0).then((step0) => {
 //   document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
@@ -156,29 +215,31 @@ obtainInstruction('steak', 0)
 // Iteration 3 using async/await
 async function makeBroccoli() {
   for (let step = 0; step < broccoli.length; step++) {
-    await obtainInstruction('broccoli', step)
+    await obtainInstruction("broccoli", step)
       .then((step) => {
-      document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`
+        document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`;
       })
-      .catch((error) => { console.log(error) })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-  await obtainInstruction('broccoli', 7).then(() => {
-    document.querySelector("#broccoliImg").removeAttribute("hidden")
-  })
+  await obtainInstruction("broccoli", 7).then(() => {
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
+  });
 }
-makeBroccoli()
+makeBroccoli();
 
 // Bonus 2 - Promise all
 
 const instructions = [];
 
 for (let i = 0; i < brusselsSprouts.length; i++) {
-  instructions.push(obtainInstruction('brusselsSprouts', i))
+  instructions.push(obtainInstruction("brusselsSprouts", i));
 }
 
 Promise.all(instructions).then((instruction) => {
-  instruction.forEach(step => {
-    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`
-    document.querySelector("#brusselsSproutsImg").removeAttribute('hidden')
-  })
-})
+  instruction.forEach((step) => {
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  });
+});
