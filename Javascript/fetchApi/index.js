@@ -82,7 +82,7 @@ function getHere() {
 //   let title = document.getElementById("title").value;
 //   let body = document.getElementById("body").value;
 
-//   // Using fetch to push to API
+// Using fetch to push to API 
 //   fetch("https://jsonplaceholder.typicode.com/comments", {
 //     method: "POST",
 //     headers: {
